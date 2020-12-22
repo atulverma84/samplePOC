@@ -5,7 +5,7 @@ var sp_options = {
     entity_id: "https://members.ifac.org/imis0",
     private_key: fs.readFileSync("key-file.pem").toString(),
     certificate: fs.readFileSync("cert-file.crt").toString(),
-    assert_endpoint: "http://localhost:3000/",
+    assert_endpoint: "http://gmail.com",
 
 }
 
@@ -23,7 +23,7 @@ var idp_options = {
     certificates: [fs.readFileSync("cert-file.crt").toString()]  
   };
   var idp = new saml2.IdentityProvider(idp_options);
-var controllers = {
+  var controllers = {
    login: function(req, res) {
            var sp = new saml2.ServiceProvider(sp_options);
 
